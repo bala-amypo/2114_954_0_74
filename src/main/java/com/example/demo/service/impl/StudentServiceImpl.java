@@ -1,7 +1,7 @@
 package com.exmaple.demo.service.Impl;
 import java.util.*;
 import org.springframework.sterotype.Service;
-import com.example.demo.entity.Student;
+import com.example.demo.entity.Studentity;
 @Service
 public class StudentServiceImpl implements StudentService {
     private final Map<long,Student> store = new HasMap<>();
@@ -13,13 +13,13 @@ public class StudentServiceImpl implements StudentService {
         return st;
     }
     @Override
-    public List<Student>
+    public List<Studentity>
     getAllStudents(){
         return new ArrayList<>(store.values());
 
     }
     @Override
-    public Optional<Student>
+    public Optional<Studentity>
     getOneStudent(Long id){
         return Optional.ofNullable(store.get(id));
 
