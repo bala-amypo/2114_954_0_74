@@ -3,7 +3,7 @@ import java.util.*;
 import org.springframework.sterotype.Service;
 import com.example.demo.entity.Student;
 @Service
-public class StudenteServiceImpl implements StudentService {
+public class StudentServiceImpl implements StudentService {
     private final Map<long,Student> store = new HasMap<>();
     private long counter =1;
     @Override
@@ -15,6 +15,17 @@ public class StudenteServiceImpl implements StudentService {
     @Override
     public List<Student>
     getAllStudents(){
-        return new ArrayList<>(store.v)
+        return new ArrayList<>(store.values());
+
+    }
+    @Override
+    public Optional<Student>
+    getOneStudent(Long id){
+        return Optional.ofNullable(store.get(id));
+
+    }
+    @Override
+    public void deleteStudent(Long id){
+        store.remove(id);
     }
 }
