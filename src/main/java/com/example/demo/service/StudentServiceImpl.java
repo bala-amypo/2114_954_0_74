@@ -2,6 +2,7 @@ package com.exmaple.demo.service.Impl;
 import java.util.*;
 import org.springframework.sterotype.Service;
 import com.example.demo.entity.Studentity;
+
 @Service
 public class StudentServiceImpl implements StudentService {
     private final Map<long,Studentity> store = new HasMap<>();
